@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html ng-app="app" ng-controller="testCtrl">
+<html ng-app="myApp">
   <head>
     <meta charset="utf-8">
     <title>Exercice 1</title>
+      <link href="style.css" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
   </head>
-  <body>
-    <div>
-        <h1>{{firstSentence| uppercase}}</h1>
-        <h1>{{secondSentence| lowercase}}</h1>
-    </div>
+  <form name="myForm">
+  <input name="myInput" ng-model="myInput" required my-directive>
+  <div id="div1" ng-show="myForm.myInput.$valid"></div>
+  </form>
+<!-- {{}}= expresion -->
+  <p>The input's valid state is:</p>
+  <h1>{{myForm.myInput.$valid}}</h1>
+
     <script src="script.js"></script>
   </body>
 </html>
